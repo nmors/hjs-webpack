@@ -23,7 +23,8 @@
     "rimraf": "^2.5.2",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "webpack-hot-middleware": "^2.10.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "git-validate": "^2.2.0",
@@ -47,12 +48,15 @@
   },
   "scripts": {
     "lint": "standard",
-    "validate": "npm ls"
+    "validate": "npm ls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "standard": {
     "ignore": [
       "examples/*/public/*",
       "examples/*/node_modules/*"
     ]
-  }
+  },
+  "snyk": true
 }
